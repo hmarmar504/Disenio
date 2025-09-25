@@ -1,12 +1,6 @@
 body{
     font-family: 'Open Sans', Arial, sans-serif;
 }
-img {
-  width: 115%;
-  height: auto;
-  display: block;
-  margin-left: -10%;
-}
 
 .header-img 
 {
@@ -16,14 +10,6 @@ img {
   width: 12%;
   height: auto;
 }
-h1
-{
-  text-align: center;
-  color: rgb(51, 47, 47);
-  font-size: 30px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
 nav ul 
 {
   display: flex;
@@ -32,8 +18,7 @@ nav ul
   list-style: none;
   padding: 0;
   margin: 0;
-  color:brown
-
+  color:rgb(165, 42, 42)
 }
 nav{
     border-bottom: solid 1px rgba(0, 0, 0, 0.151);
@@ -52,23 +37,21 @@ nav ul li img
   object-fit: contain;
 }
 .menuActive{
-    color:rgb(133, 133, 15);
+    color:rgb(155, 137, 36);
 }
 .submenu {
   display: none;
   position: absolute;
   width: 60%;
-  
 }
 .submenu li {
   padding: 15px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.123);
 }
 li:hover > .submenu {
-    border-top: solid rgb(133, 133, 15) 3px;
+    border-top: solid rgb(155, 137, 36) 3px;
     gap: 10px;
     background-color: rgb(240, 240, 240);
-    
 }
 li:hover > #menuPrincipal.submenu{
     display: grid;
@@ -80,31 +63,73 @@ li:hover > #menuSecundario.submenu{
     grid-template-columns: 1fr;
     width: 15%;
 }
-.footer-content
-{
-    text-align: center;
-    width: 110%;
-    box-sizing: border-box;
-    background-color: #3d2952;
-    color: #d8d8d8;
+.imgruta img{
+    width: 100%;
+    height: auto;
 }
-
+.tituloTarjetas{
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.3em;
+  margin: 20px 0;
+  color: rgb(155, 137, 36);
+}
 .contenidoTarjetas{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 50px;
+    border: solid blue;
+    margin-left: 7%;
+    margin-right: 7%;
 }
-
 .tarjeta{
     display: flex;
     flex-direction: column;
     align-items:flex-start;
-    border: solid red
+    margin: 20px;
+    color: #1f1f1f;
+    gap: 5px;
 }
 .tarjetaImg{
     width: 100%;;
+    display: flex;
+    justify-content: center;
 }
-.material-symbols-outlined {
+.tarjetaImg img{
+    width: 100%;
+    display: flex;
+}
+.tarjetaTitulo{
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: rgb(155, 137, 36);
+}
+.tarjetaPrecio{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.tarjetaPrecio p{
+    margin: 0;
+}
+.precio{
+    font-size: 1.5em;
+    color: rgb(155, 137, 36);
+}
+.tarjetaDescripcion{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.footer-content
+{
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #3d2952;
+    color: #d8d8d8;
+}
+.material-icons-outlined {
   font-variation-settings:
   'FILL' 0,
   'wght' 400,
