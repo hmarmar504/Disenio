@@ -54,7 +54,7 @@ nav ul li img
   display: none;
   position: absolute;
   width: 60%;
-  top: 175px;
+  top: 100%;
 }
 .submenu li {
   padding: 15px;
@@ -166,9 +166,38 @@ footer ul ::marker{
     grid-template-columns: repeat(2, 1fr);
   }
   nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: center;
+  }
+  nav img{
     display: none;
   }
   main{
     margin-top: 8%;
+  }
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 63%;
+    text-size-adjust: none;
+    font-size: small;
+  }
+  li:hover > .submenu {
+    border-top: solid rgb(145, 115, 33) 3px;
+    gap: 10px;
+    background-color: rgb(240, 240, 240);
+  }
+  li:hover > #menuPrincipal.submenu{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    left: 20%;
+  }
+  li:hover > #menuSecundario.submenu{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 15%;
+    left: 68%;
   }
 }
