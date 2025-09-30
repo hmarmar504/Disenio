@@ -1,0 +1,88 @@
+.seleccion{
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    height: 100vh;
+}
+.imagen{
+    grid-area: 2/2/3/3;
+}
+.contenido{
+    grid-area: 2/3/3/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    font-size:large;
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+
+.contenido button{
+    width: 150px;
+    height: 35px;
+    border: none;
+    background-color: rgb(177, 36, 71);
+    color: white;
+    font-size: 18px;
+}
+.fondo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background-color: rgb(177, 36, 71);
+    background-size: cover;
+    z-index: -1;
+}
+.boton{
+    position: absolute;
+    top: 15%;
+    left: 80%;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(17, 0, 255);
+    border-radius: 50%;
+    z-index: 1;
+    border: none;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.vino{
+    z-index: -1;
+}
+.verde{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(55, 255, 138);
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    transition-property: border-radius, color, visibility, top, left;
+    transition-duration: 1500ms, 100ms, 2500ms, 2000ms, 2000ms;
+    transition-delay: 0s, 200ms, 500ms, 300ms, 300ms;
+    overflow: hidden;
+}
+.verde_oculto{
+    border-radius: 100% 0 0 100%;
+    color: transparent;
+    visibility: hidden;
+    top: -100%;
+    left: 100%;
+    overflow: hidden;
+}
