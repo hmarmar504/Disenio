@@ -66,6 +66,9 @@
       <div class="tarjeta">
         <div class="tarjetaImg">
           <img src="imgtoledo/prueba.jpg">
+          <div class="iconoNuevo">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#F3F3F3"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+        </div>
         </div>
         <div class="tarjetaTitulo">
           Ruta toledo 3 Culturas
@@ -84,6 +87,9 @@
       <div class="tarjeta">
       <div class="tarjetaImg">
         <img src="imgtoledo/prueba.jpg">
+        <div class="iconoNuevo">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#F3F3F3"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+        </div>
       </div>
       <div class="tarjetaTitulo">
         Ruta toledo y el agua
@@ -102,6 +108,9 @@
     <div class="tarjeta">
       <div class="tarjetaImg">
         <img src="imgtoledo/prueba.jpg">
+        <div class="iconoNuevo">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#F3F3F3"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+        </div>
       </div>
       <div class="tarjetaTitulo">
         Ruta Toledo actual
@@ -120,6 +129,9 @@
     <div class="tarjeta">
       <div class="tarjetaImg">
         <img src="imgtoledo/prueba.jpg">
+        <div class="iconoNuevo">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#F3F3F3"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+        </div>
       </div>
       <div class="tarjetaTitulo">
         Ruta mujeres ilustres toledanas
@@ -171,4 +183,14 @@
       </div>
     </footer>
 </body>
+<script>
+window.addEventListener('scroll', function() {
+  var headerImg = document.querySelector('.header-img');
+  if (window.scrollY > 50) {
+    headerImg.classList.add('peque');
+  } else {
+    headerImg.classList.remove('peque');
+  }
+});
+</script>
 </html>

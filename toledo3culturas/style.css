@@ -1,14 +1,35 @@
 body{
     font-family: 'Open Sans', Arial, sans-serif;
 }
-
+main {
+  margin-top: 7%; 
+}
+/* Encabezado */
 .header-img 
 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 12%;
+  width: 6%;
   height: auto;
+  transition: width 0.3s;
+}
+.header-img.peque{
+  width: 5%;
+}
+.encabezado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+}
+/*Barra de navegacion / Menu*/
+nav{
+    border-bottom: solid 1px rgba(0, 0, 0, 0.151);
+    font-weight: bold;
+    background-color: white;
 }
 nav ul 
 {
@@ -20,32 +41,9 @@ nav ul
   margin: 0;
   color:rgb(165, 42, 42);
 }
-nav{
-    border-bottom: solid 1px rgba(0, 0, 0, 0.151);
-    font-weight: bold;
-    background-color: white;
-}
-.encabezado {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: white;
-}
-main {
-  margin-top: 9%; 
-}
-
 nav ul li 
 {
   margin: 0 10px;
-}
-nav ul li img 
-{
-  width: 100px;  
-  height: 50px;  
-  object-fit: contain;
 }
 .menuActive{
     color:rgb(155, 137, 36);
@@ -55,9 +53,11 @@ nav ul li img
   position: absolute;
   width: 60%;
   top: 100%;
+  padding-bottom: 1%;
+  padding-top: 1%;
 }
 .submenu li {
-  padding: 15px;
+  padding: 5px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.123);
 }
 li:hover > .submenu {
@@ -82,6 +82,24 @@ li:hover > #menuSecundario.submenu{
     width: 100%;
     height: auto;
 }
+/*Tarjetas*/
+.tarjeta{
+    display: flex;
+    flex-direction: column;
+    color: #1f1f1f;
+}
+.tarjeta:hover > .tarjetaImg img{
+    opacity: 0.2;
+}
+.iconoNuevo{
+    position: absolute;
+    background-color: rgb(145, 115, 33);
+    border-radius: 50%;
+    padding: 6px;
+    width: 25px;
+    height: 25px;
+    z-index: -1;
+}
 .tituloTarjetas{
   text-align: center;
   font-weight: bold;
@@ -96,20 +114,17 @@ li:hover > #menuSecundario.submenu{
     margin-left: 12%;
     margin-right: 12%;
 }
-.tarjeta{
-    display: flex;
-    flex-direction: column;
-    align-items:flex-start;
-    color: #1f1f1f;
-}
 .tarjetaImg{
     width: 100%;;
     display: flex;
-    justify-content: start;
+    justify-content: center;
+    align-items: center;
 }
 .tarjetaImg img{
     width: 100%;
     display: flex;
+        transition:opacity 0.3s;
+
 }
 .tarjetaTitulo{
     font-size: 1.2em;
@@ -132,6 +147,7 @@ li:hover > #menuSecundario.submenu{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: start;
 }
 footer
 {
@@ -180,7 +196,7 @@ footer ul ::marker{
   .submenu {
     display: none;
     position: absolute;
-    top: 63%;
+    top: 62%;
     text-size-adjust: none;
     font-size: small;
   }
