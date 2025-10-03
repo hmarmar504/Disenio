@@ -10,13 +10,26 @@ main {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 6%;
+  width: 5%;
   height: auto;
-  transition: width 0.3s;
+  /*transition: width 0.3s;*/
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+
+  animation-timeline: --image;
+  animation-name: titulo;
 }
+@keyframes titulo{
+  from{
+    width: 5%;
+  }
+  to{
+    width: 6%;
+  }
+}/*
 .header-img.peque{
   width: 5%;
-}
+}*/
 .encabezado {
   position: fixed;
   top: 0;
@@ -70,12 +83,14 @@ li > #menuPrincipal.submenu{
   grid-template-columns: repeat(4, 1fr);
   left: 10%;
   visibility: hidden;
-  transition: left 1s;
+  transition: left 1s, opacity 500ms;
+  opacity: 0;
 }
 
 li:hover > #menuPrincipal.submenu{
     left: 20%;
     visibility: visible;
+    opacity: 1;
 }
 li > #menuSecundario.submenu{
   visibility: hidden;
@@ -186,13 +201,45 @@ footer a{
 footer ul ::marker{
   color: rgb(145, 115, 33);
 }
-@media (max-width: 11      00px) {
-  .contenidoTarjetas {
+@media (max-width: 700px){
+  .contenidoTarjetas{
+    grid-template-columns: 1fr;
+    margin-left: 4%;
+    margin-right: 4%;
+    border:solid;
+  }
+  .tarjeta{
+    border:solid;
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+
+  animation-timeline: --image;
+  animation-name: show;
+
+  animation-range: entry 25% cover 50%;
+  animation-fill-mode: both;
+  }
+@keyframes show{
+    from{
+        opacity: 0;
+        scale: 25%;
+    }
+    to{
+        opacity: 1;
+        scale: 100%;
+    }
+}
+}
+@media (max-width: 1100px) and (min-width: 701px) {
+    .contenidoTarjetas {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     margin-left: 4%;
     margin-right: 4%;
   }
+}
+@media (max-width: 1100px){
+
   footer {
     grid-template-columns: repeat(2, 1fr);
   }
