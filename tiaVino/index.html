@@ -9,8 +9,9 @@
 <body>
     <div class="vino">
         <div class="fondo"></div>
-        <div class="boton" id="boton" onclick="document.getElementById('verde').classList.remove('verde_oculto')">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></div>
+        <a href="#verde" class="boton" id="boton">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </a>
         <div class="seleccion">
             <div class="imagen">
                 <img src="img/mujervino.jpg">
@@ -23,7 +24,7 @@
         </div>
     </div>
     <div class="verde" id="verde">
-        <div class="boton" onclick="document.getElementById('verde').classList.add('verde_oculto')">X</div>
+        <a href="#" class="boton cerrar">X</a>
         <div>
             <p>Inicio</p>
             <p>Acerca de</p>

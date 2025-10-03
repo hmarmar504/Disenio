@@ -28,6 +28,10 @@ img{
     color: white;
     font-size: 18px;
 }
+.contenido button:active{
+    transform: scale(0.90);
+    transition: transform 0.1s;
+}
 .fondo{
     position: absolute;
     top: 0;
@@ -36,7 +40,7 @@ img{
     height: 100%;
     background-color: rgb(177, 36, 71);
     background-size: cover;
-    z-index: -1;
+    z-index: -2;
 }
 .boton{
     position: absolute;
@@ -46,13 +50,12 @@ img{
     height: 50px;
     background-color: rgb(17, 0, 255);
     border-radius: 50%;
-    z-index: 1;
-    border: none;
     font-size: 30px;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 .vino{
     z-index: -1;
@@ -65,24 +68,19 @@ img{
     position: absolute;
     top: 0;
     left: 0;
-    visibility: visible;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: xx-large;
     text-align: center;
     color: rgb(255, 255, 255);
-    transition-property: border-radius, color, visibility, top, left;
-    transition-duration: 1500ms, 100ms, 2500ms, 2000ms, 2000ms;
-    transition-delay: 0s, 200ms, 500ms, 300ms, 300ms;
-    overflow: hidden;
+    clip-path: circle(0% at 100% 0%);
+    transition: clip-path 1.5s;
 }
-.verde_oculto{
-    border-radius: 100% 0 0 100%;
-    color: transparent;
-    visibility: hidden;
-    top: -100%;
-    left: 100%;
-    overflow: hidden;
+.verde:target{
+    clip-path: circle(150% at 100% 0%);
+}
+.boton:active{
+    transform: scale(0.90);
+    transition: transform 0.1s;
 }
