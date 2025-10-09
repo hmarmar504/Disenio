@@ -65,7 +65,7 @@
                 En todo caso <b>facilite un número de teléfono móvil</b> por si tenemos que contactar con usted.</p>
             <p>Si desea realizar una reserva en nuestras rutas programadas, 
                 complete el formulario que aparece en cualquier página al pulsar sobre el botón en la zona derecha 
-                ¡RESERVAR ESTA RUTA! o llámenos al teléfono 603 420 820. Si lo que desea es información en general, 
+                <b>¡RESERVAR ESTA RUTA!</b> o llámenos al <b>teléfono</b> <b class="rojo">603 420 820.</b> Si lo que desea es información en general, 
                 o en particular sobre alguna de las rutas o visitas a la carta, rellene el formulario de contacto que encontrará a continuación. </p>
                 <p>Puede utilizar este formulario para enviarnos sus sugerencias, quejas y reclamaciones e intentaremos contactar para resolver sus dudas lo antes posible.</p>
         </div>
@@ -76,25 +76,30 @@
             <h4>Contacta con nosotros</h4>
             <p>603 420 820 info@tolefo3culturas.com</p>
         </aside>
-        <div class="contactFormulario">
+        <article>
+          <p id="contactFormTitulo">Formulario de Contacto</p>
+          <div class="contactFormulario">
             <input type="text" placeholder="Nombre*">
             <input type="text" placeholder="Direccion de correo-e*">
             <input type="text" placeholder="Nº de telefono">
             <input type="text" placeholder="Asunto*">
             <input type="text" placeholder="Mensaje*">
 
-            <div>
-                <p><b>Politica de Privacidad</b></p>
-                <input type="checkbox"><label>Por favor, aceptra nuestra <a href="#"><b>Politica de Privacidad</b></a></label>
+            <div id="contactPrivacidad">
+                <div>
+                  <p><b>Politica de Privacidad</b></p>
+                  <input type="checkbox"><label>Por favor, aceptra nuestra <a href="#"><b>Politica de Privacidad</b></a></label>
+                </div>
+                <button id="contactoEnviar">Enviar</button>
             </div>
-            <button id="contactoEnviar">Enviar</button>
-            <p id="contactoFormTexto">Si ya ha elegido la ruta a realizar, envíenos una lista con los monumentos que desea visitar 
-                o de la ruta que le gustaría realizar y le enviaremos un presupuesto a medida. 
-                No sólo realizamos las rutas de nuestro programa, también planificamos rutas a 
-                medida de las necesidades del cliente o grupo (consultar rutas para grupos).</p>
-        </div>
-        
-    </div>
+              
+              <p id="contactoFormTexto">Si ya ha elegido la ruta a realizar, envíenos una lista con los monumentos que desea visitar 
+                  o de la ruta que le gustaría realizar y le enviaremos un presupuesto a medida. 
+                  No sólo realizamos las rutas de nuestro programa, también planificamos rutas a 
+                  medida de las necesidades del cliente o grupo <b class="rojo">(consultar rutas para grupos)</b>.</p>
+              </div>
+        </article>
+      </div>
     </main>
     <footer>    
       <div>
