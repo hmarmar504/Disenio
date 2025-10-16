@@ -5,8 +5,10 @@ body{
 }
 /*Cabecera general*/
 header{
+    position: fixed;
     height: 125px;
     background-color: white;
+    width: 100%;
 }
 .headRedes{
     display: flex;
@@ -76,12 +78,15 @@ header{
 }
 
 .navRegiones li{
-    height: 100%;
+    height: 80%;
 }
 .navRegiones li:hover > .navRegionesSubmenu > ul{
     z-index: 2;
     display: flex;
     background-color: black;
+}
+.navRegiones > ul > li:hover{
+    border-bottom: solid 15px goldenrod;
 }
 .navRegiones li:hover #active > .navRegionesSubmenu >ul{
     display: none;
@@ -90,10 +95,48 @@ header{
     display: flex;
     z-index: 1;
 }
+#active{
+    color: goldenrod;
+}
 .navLogos{
     display: flex;
     position: absolute;
     z-index: 100;
     right: 2%;
-    top: 0px;
+    top: 40px;
+    gap: 10px;
+}
+.navLogos select{
+    border: none;
+
+}
+.navLogos img{
+    height: 40px;
+}
+.navBotones{
+    display: flex;
+    position: absolute;
+    right: 0%;
+    padding-right:1% ;
+    gap: 15px;
+    background-color: black;
+    height: 70px;
+    width: 100%;
+    top: 85px;
+    align-items: center;
+    justify-content: end;
+
+}
+.navBotones button{
+    height: 50px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(36, 36, 36);
+    z-index: 5;
+}
+#navBotonesTienda{
+    background-color: goldenrod;
+    color: black;
 }
