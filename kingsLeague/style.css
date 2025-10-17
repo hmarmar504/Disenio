@@ -2,20 +2,30 @@ body{
     height: 120vh;
     background-color: green;
     font-family: Archivo, sans-serif;
+    margin: 0px;
+}
+main{
+    display: flex;
+    padding-top:160px ;
+    overflow: hidden;
+    width: 100%;
 }
 /*Cabecera general*/
 header{
+    top: 0px;
+    left: 0px;
     position: fixed;
-    height: 125px;
+    height: 160px;
     background-color: white;
     width: 100%;
+    overflow: hidden;
 }
 .headRedes{
     display: flex;
     justify-content: end;
     background-color: black;
     width: 100%;
-    height: 20px;
+    height: 30px;
     align-items: center;
 }
 .headRedesLogos{
@@ -35,6 +45,7 @@ header{
     font-size: .875rem;
     font-weight: 500;
     height: 60px;
+    text-align: center;
 }
 .navRegiones li{
     display: flex;
@@ -44,6 +55,7 @@ header{
 }
 .navRegiones ul{
     display: flex;
+    align-items: center;
     list-style: none;
     margin: 0px;
     height: 100%;
@@ -62,7 +74,7 @@ header{
     color: white;
     position:absolute;
     left: 0;
-    top: 85px;
+    top: 90px;
     width: 75%;
 }
 .navRegionesSubmenu ul{
@@ -103,7 +115,7 @@ header{
     position: absolute;
     z-index: 100;
     right: 2%;
-    top: 40px;
+    top: 33px;
     gap: 10px;
 }
 .navLogos select{
@@ -111,7 +123,7 @@ header{
 
 }
 .navLogos img{
-    height: 40px;
+    height: 35px;
 }
 .navBotones{
     display: flex;
@@ -122,7 +134,7 @@ header{
     background-color: black;
     height: 70px;
     width: 100%;
-    top: 85px;
+    top: 90px;
     align-items: center;
     justify-content: end;
 
@@ -135,8 +147,33 @@ header{
     color: white;
     background-color: rgb(36, 36, 36);
     z-index: 5;
+    transition: background-color 0.2s;
 }
 #navBotonesTienda{
     background-color: goldenrod;
     color: black;
+    transition: background-color 0.2s;
+
 }
+#navBotonesTienda:hover{
+    background-color: rgb(216, 179, 87);
+}
+.navBotones button:hover{
+    background-color: rgb(61, 61, 61);
+}
+.barraDecoracion{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.barraDecoracionBrasil{
+    display: flex;
+    justify-content: center;
+    background-image: url('https://cms-es.kingsleague.pro/wp-content/uploads/2025/10/KWCN26-BANNER-1992x176-DESK-fondo.png');    
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: 50%;
+    background-size: cover;
+}
+.barraDecoracionLetras{}
