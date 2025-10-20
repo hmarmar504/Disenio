@@ -1,0 +1,135 @@
+:root{
+  --size: 160px;
+  --main-color: #4f75ff;
+  --accent: #ff7a59;
+}
+.contenedor{
+  width: var(--size);
+  height: var(--size);
+  background: var(--main-color);
+  margin:auto;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  color:white;
+  font-weight:600;
+}
+.circulo  { 
+  clip-path: circle(40%); 
+}
+.ellipse  { 
+  clip-path: ellipse(55% 35% at center top); 
+}
+.inset    { 
+  clip-path: inset(14% 10% 14% 10% round 16px); 
+}
+.pentagono{
+  background: var(--accent);
+  clip-path: polygon(
+    calc(50% + 40% * cos(270deg)) calc(50% + 40% * sin(270deg)),
+    calc(50% + 40% * cos(342deg)) calc(50% + 40% * sin(342deg)),
+    calc(50% + 40% * cos( 54deg)) calc(50% + 40% * sin( 54deg)),
+    calc(50% + 40% * cos(126deg)) calc(50% + 40% * sin(126deg)),
+    calc(50% + 40% * cos(198deg)) calc(50% + 40% * sin(198deg))
+  );
+}
+
+.estrella{
+  background: var(--accent);
+  clip-path: polygon(
+    evenodd,
+    calc(50% + 45% * cos(270deg)) calc(50% + 45% * sin(270deg)),
+    calc(50% + 45% * cos( 54deg)) calc(50% + 45% * sin( 54deg)),
+    calc(50% + 45% * cos(198deg)) calc(50% + 45% * sin(198deg)),
+    calc(50% + 45% * cos(342deg)) calc(50% + 45% * sin(342deg)),
+    calc(50% + 45% * cos(126deg)) calc(50% + 45% * sin(126deg))
+  );
+}
+.corazon{
+  background:pink;
+  clip-path: path("M 10 50 A 40 40 0 0 1 100 40 A 40 40 0 0 1 190 50 Q 190 100 100 190 Q 10 100 10 50");
+  transform: scale(.75);
+  transform-origin:center;
+}
+.imagen{
+  background: url('https://www.lavanguardia.com/peliculas-series/images/serie/poster/1987/12/w300/xYMOCsMw8OkaNndVskkSO9NXmcY.jpg')
+    center/cover no-repeat;
+  mask-image: linear-gradient(black 25%, transparent 100%),
+               radial-gradient(circle at 70% 65%, black, black 40%, transparent 41%);
+  mask-mode: alpha;
+}
+.cambiaForma{
+  background:green;
+  animation: forma 3s ease-in-out infinite alternate;
+}
+@keyframes forma{
+  from{
+    clip-path: polygon(
+      evenodd,
+      calc(50% + 45% * cos(270deg)) calc(50% + 45% * sin(270deg)),
+      calc(50% + 45% * cos(342deg)) calc(50% + 45% * sin(342deg)),
+      calc(50% + 45% * cos( 54deg)) calc(50% + 45% * sin( 54deg)),
+      calc(50% + 45% * cos(126deg)) calc(50% + 45% * sin(126deg)),
+      calc(50% + 45% * cos(198deg)) calc(50% + 45% * sin(198deg))
+    );
+  }
+  to{
+    clip-path: polygon(
+      evenodd,
+      calc(50% + 45% * cos(270deg)) calc(50% + 45% * sin(270deg)),
+      calc(50% + 45% * cos( 54deg)) calc(50% + 45% * sin( 54deg)),
+      calc(50% + 45% * cos(198deg)) calc(50% + 45% * sin(198deg)),
+      calc(50% + 45% * cos(342deg)) calc(50% + 45% * sin(342deg)),
+      calc(50% + 45% * cos(126deg)) calc(50% + 45% * sin(126deg))
+    );
+  }
+}
+.move{
+  position:relative;
+  width: calc(var(--size) * 1.4);
+  height: calc(var(--size) * 1.4);
+  margin:auto;
+}
+.recorrido{
+  position:absolute; inset:0;
+  background: blue;
+  clip-path: polygon(
+    calc(50% + 50% * cos(270deg)) calc(50% + 50% * sin(270deg)),
+    calc(50% + 50% * cos( 54deg)) calc(50% + 50% * sin( 54deg)),
+    calc(50% + 50% * cos(198deg)) calc(50% + 50% * sin(198deg)),
+    calc(50% + 50% * cos(342deg)) calc(50% + 50% * sin(342deg)),
+    calc(50% + 50% * cos(126deg)) calc(50% + 50% * sin(126deg))
+  );
+}
+.punto{
+  position:absolute;
+  width:16px; height:16px;
+  border-radius:50%;
+  background:black;
+  offset-path: polygon(
+    calc(50% + 50% * cos(270deg)) calc(50% + 50% * sin(270deg)),
+    calc(50% + 50% * cos( 54deg)) calc(50% + 50% * sin( 54deg)),
+    calc(50% + 50% * cos(198deg)) calc(50% + 50% * sin(198deg)),
+    calc(50% + 50% * cos(342deg)) calc(50% + 50% * sin(342deg)),
+    calc(50% + 50% * cos(126deg)) calc(50% + 50% * sin(126deg))
+  );
+  animation: camino 5s linear infinite;
+}
+.punto:nth-child(2){ 
+  background:yellow; animation-delay:.25s; 
+}
+.punto:nth-child(3){ 
+  background:green; animation-delay:.5s; 
+}
+.punto:nth-child(4){ 
+  background:red; animation-delay:.75s; 
+}
+
+@keyframes camino{
+  from{ 
+    offset-distance:0%; transform: translate(-50%,-50%) rotate(0deg); 
+  }
+  to  { 
+    offset-distance:100%; transform: translate(-50%,-50%) rotate(270deg); 
+  }
+}
