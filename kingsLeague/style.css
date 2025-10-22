@@ -21,6 +21,9 @@ header{
     width: 100%;
     overflow: hidden;
 }
+header.headerResponsivo{
+    display: none;
+}
 .headRedes{
     display: flex;
     justify-content: end;
@@ -269,4 +272,100 @@ header{
     justify-content: center;
     background-color: #111111;
     border-radius: 0px 0px 10px 10px;
+}
+@media (max-width: 1250px){
+    header.headerEscritorio{
+        display: none;
+    }
+    main{
+        margin-top: 100px;
+    }
+    header.headerResponsivo{
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+    }
+    .responsivoImagen{
+        height: 65px;
+        margin-left: 20px;
+    }
+    .responsivoBurger{
+        margin-right: 20px;
+    }
+    .responsivoBurger > div{
+        display: none;
+    }
+    .headerResponsivo:hover  .responsivoDesplegable{
+        display: block;
+    }
+    .responsivoCabecera{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        justify-content: space-between;
+    }
+    .responsivoDesplegable{
+        position: fixed;
+        left: 0;
+        top: 90px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 450px;
+        z-index: 9999;
+    }
+    .responsivoMenu{
+        border-top: solid 1px goldenrod;
+        width: 100%;
+        height: 450px;
+        background-color: #111111;
+    }
+    .responsivoRedes{
+        width: 100%;
+        height: 100px;
+        background-color: red;
+    }
+    .responsivoBotones{
+        background-color: #111111;
+        height: 40%;
+        width: 100%;
+    }
+    .responsivoMenuPaises{
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        background-color: green;
+        width: 200px;
+    }
+    .responsivoMenuPaises > li{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 10px;
+        margin: 0px;
+        background-color: white;
+        border-bottom: 2px solid grey;
+    }
+    .responsivoMenuPaises >li:hover > ul{
+        display: block;
+    }
+    .responsivoMenuPaises > li > ul{
+        display: none;
+        position: absolute;
+        color: white;
+        top: 0px;
+        left: 160px;
+        list-style: none;
+        width: 100%;
+    }
+    .responsivoMenuPaises > li > ul > li{
+        width: 100%;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        padding-left: 10px;
+        border-bottom: 1px solid grey;
+        display: flex;
+    }
 }
