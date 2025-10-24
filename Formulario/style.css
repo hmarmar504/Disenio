@@ -1,0 +1,91 @@
+:root{
+    --rosita:rgb(255, 0, 55);
+}
+body{
+    background-color: #101010;
+    color: whitesmoke;
+    font-family: sans-serif;
+}
+.inicio{
+    text-align: center;
+    font-size: 4em;
+    color: var(--rosita);
+}
+.inicio b{
+    font-style: normal;
+    color: whitesmoke;
+}
+.contenido{
+    display: flex;
+    flex-direction: row;
+    margin: 40px;
+    background-color: #1b1b1b;
+    box-shadow: #555555 0px 0px 20px 5px;
+    height: 80vh;
+}
+.formulario{
+    display: grid;
+    grid-template-columns: repeat(2 1fr);
+    width: 75%;
+    padding: 50px;
+    padding-top: 60px;
+    gap: 50px;
+}
+.titulo{
+    font-size: 2em;
+    grid-area: 1/1/2/3;
+}
+input{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    border-bottom: var(--rosita) 1px solid;
+    color: whitesmoke;
+    font-size: 1.70em;
+}
+input::placeholder{
+    color: #bbbbbb;
+}
+textarea{
+        display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    border-bottom: var(--rosita) 1px solid;
+    color: whitesmoke;
+    font-size: 1.70em;
+}
+textarea::placeholder{
+    font-family: sans-serif;
+    color: #bbbbbb;
+    align-items: start;
+}
+
+.formulario textarea{
+    grid-area: 4/1/7/3;
+}
+button{
+    grid-area: 7/1/8/3;
+    border: none;
+    background-color: var(--rosita);
+    color: whitesmoke;
+    font-size: larger;
+    height: 70px;
+}
+.contacto{
+    width: 25%;
+    background-color: black;
+    padding: 30px;
+    font-size: 1.4em;
+}
+.nomargen{
+    margin: 0px;
+}
+p{
+    margin: 0px;
+    margin-bottom: 40px;
+}
+img{
+    height: 1em;
+}
