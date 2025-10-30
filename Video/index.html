@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Example of custom audio controls</h1>
+    </header>
+    <main>
+        <video width="480" height="320" id="videoPrincipal">
+            <source src="" type="video/mp4">
+        </video>
+    </main>
+    <aside>
+        <video onclick="cambioVideo2()" width="480" height="320" id="myVideo2">
+        <source src="imagenes/bobEsponja.mp4" type="video/mp4">
+    </video>
+    <video onclick="cambioVideo1()" width="480" height="320" id="myVideo1">
+        <source src="imagenes/tortugasNinja.mp4" type="video/mp4">
+    </video>
+    </aside>
+    <script>
+
+        const theVideo1 = document.querySelector("#myVideo1");
+        const theVideo2 = document.querySelector('#myVideo2');
+        const videoPrincipal = document.querySelector('#videoPrincipal')
+        function cambioVideo2(){
+            stopAudio();
+            const SourceMp4 = document.createElement("source");
+            SourceMp4.src = "imagenes/bobEsponja.mp4";
+            SourceMp4.type = "video/mp4";
+            videoPrincipal.innerHTML ="";
+            videoPrincipal.appendChild(SourceMp4)
+            playAudio();
+        };
+        function cambioVideo1(){
+            stopAudio();
+             const SourceMp4 = document.createElement("source");
+            SourceMp4.src = "imagenes/tortugasNinja.mp4";
+            SourceMp4.type = "video/mp4";
+            videoPrincipal.innerHTML ="";
+            videoPrincipal.appendChild(SourceMp4)
+        }
+        function playAudio(){
+            videoPrincipal.play();
+        };
+        function pauseAudio(){
+            videoPrincipal.pause();
+        };
+        function stopAudio(){
+            videoPrincipal.currentTime= 0;
+            videoPrincipal.pause();
+        };
+        function rewindAudio(){
+            videoPrincipal.currentTime= 0;
+        };
+
+    </script>
+</body>
+</html>
