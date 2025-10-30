@@ -1,0 +1,29 @@
+body{
+    border: solid 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+}
+section{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+button{
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+.btnPlay{
+    background-color: rgb(0, 255, 128);
+}
+.btnPause{
+    background-color: rgb(128, 0, 255);
+}
+.btnStop{
+    background-color: rgb(255, 128, 0);
+}
+.btnRewind{
+    background-color: rgb(0, 128, 255);
+}

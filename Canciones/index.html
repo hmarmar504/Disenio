@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Example of custom audio controls</h1>
+        <section>
+            <button onclick="playAudio()" class="btnPlay">Play</button>
+            <button onclick="pauseAudio()" class="btnPause">Pause</button>
+            <button onclick="stopAudio()" class="btnStop">Stop</button>
+            <button onclick="rewindAudio()" class="btnRewind">Rewind</button>
+        </section>
+    </header>
+    <audio controls="controls" id="myAudio">
+        <source src="imagenes/bob-esponja.mp3" type="audio/mp3"/>
+        element.
+    </audio>
+    <script>
+        theAudio = document.querySelector("#myAudio");
+
+        function playAudio(){
+            theAudio.play();
+        }
+        function pauseAudio(){
+            theAudio.pause();
+        }
+        function stopAudio()
+        {
+            theAudio.currentTime= 0;
+            theAudio.pause();
+        }
+        function rewindAudio()
+        {
+            theAudio.currentTime= 0;
+        }
+
+    </script>
+</body>
+</html>
