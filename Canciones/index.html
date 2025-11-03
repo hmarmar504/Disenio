@@ -9,35 +9,94 @@
 <body>
     <header>
         <h1>Example of custom audio controls</h1>
-        <section>
-            <button onclick="playAudio()" class="btnPlay">Play</button>
-            <button onclick="pauseAudio()" class="btnPause">Pause</button>
-            <button onclick="stopAudio()" class="btnStop">Stop</button>
-            <button onclick="rewindAudio()" class="btnRewind">Rewind</button>
-        </section>
     </header>
-    <audio controls="controls" id="myAudio">
-        <source src="imagenes/bob-esponja.mp3" type="audio/mp3"/>
-        element.
-    </audio>
-    <script>
-        theAudio = document.querySelector("#myAudio");
+    <main>
+        <video width="480" height="320" id="videoPrincipal">
+            <source src="" type="video/mp4">
+        </video>
+        <div class="controls">
+            <button type="button" onclick="playVideo()">Play</button>
+            <button type="button" onclick="pauseVideo()">Pause</button>
+            <button type="button" onclick="stopVideo()">Stop</button>
+            <button type="button" onclick="prevVideo()">Previous</button>
+            <button type="button" onclick="nextVideo()">Next</button>
+            <button type="button" onclick="aleatorio()">Aleatorio</button>
+        </div>
 
-        function playAudio(){
-            theAudio.play();
+    </main>
+    <aside>
+        <video width="480" height="320" id="myVideo2">
+        <source src="imagenes/bobEsponja.mp4" type="video/mp4">
+    </video>
+    <video width="480" height="320" id="myVideo1">
+        <source src="imagenes/tortugasNinja.mp4" type="video/mp4">
+    </video>
+    <video width="480" height="320" id="myVideo1">
+        <source src="imagenes/baileBob.mp4" type="video/mp4">
+    </video>
+    </aside>
+    <script>
+        //lista de videos
+        let videos = document.querySelectorAll('aside video');
+        //Direccion de los videos
+        let playlist = [];
+        for(let i=0; i<videos.length; i++){
+                playlist.push(videos[i].querySelector('source').src);
+            }
+        let videoActual = 0;
+        const videoPrincipal = document.querySelector('#videoPrincipal');
+        const videoPrincipalEnlace = document.querySelector('#videoPrincipal source');
+
+          //carga de video
+        for(let i=0; i<videos.length; i++){
+            videos[i].addEventListener('click',function(){
+                videoPrincipal.querySelector('source').src = playlist[i];
+                cargarVideo();
+                playVideo();
+                videoActual = i;
+            });
+        }        
+
+        function nextVideo(){
+            videoActual++;
+            if(videoActual >= playlist.length){
+                videoActual = 0;
+            }
+            videoPrincipalEnlace.src = playlist[videoActual];
+            cargarVideo();
+            playVideo();
         }
-        function pauseAudio(){
-            theAudio.pause();
+        function prevVideo(){
+            videoActual--;
+            if(videoActual < 0){
+                videoActual = playlist.length-1;
+            }
+            videoPrincipalEnlace.src = playlist[videoActual];
+            cargarVideo();
+            playVideo();
         }
-        function stopAudio()
-        {
-            theAudio.currentTime= 0;
-            theAudio.pause();
+
+        function aleatorio(){
+            //Se tiene que poner el trunc porque sino pilla decimales y no lo encuentra en el array
+            videoActual = Math.trunc(Math.random() * playlist.length);
+            videoPrincipalEnlace.src = playlist[videoActual];
+            cargarVideo();
+            playVideo();
         }
-        function rewindAudio()
-        {
-            theAudio.currentTime= 0;
+
+        function cargarVideo(){
+            videoPrincipal.load();
         }
+        function playVideo(){
+            videoPrincipal.play();
+        };
+        function pauseVideo(){
+            videoPrincipal.pause();
+        };
+        function stopVideo(){
+            videoPrincipal.currentTime= 0;
+            videoPrincipal.pause();
+        };
 
     </script>
 </body>

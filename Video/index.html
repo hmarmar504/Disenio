@@ -14,49 +14,88 @@
         <video width="480" height="320" id="videoPrincipal">
             <source src="" type="video/mp4">
         </video>
+        <div class="controls">
+            <button type="button" onclick="playVideo()">Play</button>
+            <button type="button" onclick="pauseVideo()">Pause</button>
+            <button type="button" onclick="stopVideo()">Stop</button>
+            <button type="button" onclick="prevVideo()">Previous</button>
+            <button type="button" onclick="nextVideo()">Next</button>
+            <button type="button" onclick="aleatorio()">Aleatorio</button>
+        </div>
+
     </main>
     <aside>
-        <video onclick="cambioVideo2()" width="480" height="320" id="myVideo2">
+        <video width="480" height="320" id="myVideo2">
         <source src="imagenes/bobEsponja.mp4" type="video/mp4">
     </video>
-    <video onclick="cambioVideo1()" width="480" height="320" id="myVideo1">
+    <video width="480" height="320" id="myVideo1">
         <source src="imagenes/tortugasNinja.mp4" type="video/mp4">
+    </video>
+    <video width="480" height="320" id="myVideo1">
+        <source src="imagenes/baileBob.mp4" type="video/mp4">
     </video>
     </aside>
     <script>
+        //lista de videos
+        let videos = document.querySelectorAll('aside video');
+        //Direccion de los videos
+        let playlist = [];
+        for(let i=0; i<videos.length; i++){
+                playlist.push(videos[i].querySelector('source').src);
+            }
+        let videoActual = 0;
+        const videoPrincipal = document.querySelector('#videoPrincipal');
+        const videoPrincipalEnlace = document.querySelector('#videoPrincipal source');
 
-        const theVideo1 = document.querySelector("#myVideo1");
-        const theVideo2 = document.querySelector('#myVideo2');
-        const videoPrincipal = document.querySelector('#videoPrincipal')
-        function cambioVideo2(){
-            stopAudio();
-            const SourceMp4 = document.createElement("source");
-            SourceMp4.src = "imagenes/bobEsponja.mp4";
-            SourceMp4.type = "video/mp4";
-            videoPrincipal.innerHTML ="";
-            videoPrincipal.appendChild(SourceMp4)
-            playAudio();
-        };
-        function cambioVideo1(){
-            stopAudio();
-             const SourceMp4 = document.createElement("source");
-            SourceMp4.src = "imagenes/tortugasNinja.mp4";
-            SourceMp4.type = "video/mp4";
-            videoPrincipal.innerHTML ="";
-            videoPrincipal.appendChild(SourceMp4)
+          //carga de video
+        for(let i=0; i<videos.length; i++){
+            videos[i].addEventListener('click',function(){
+                videoPrincipal.querySelector('source').src = playlist[i];
+                cargarVideo();
+                playVideo();
+                videoActual = i;
+            });
+        }        
+
+        function nextVideo(){
+            videoActual++;
+            if(videoActual >= playlist.length){
+                videoActual = 0;
+            }
+            videoPrincipalEnlace.src = playlist[videoActual];
+            cargarVideo();
+            playVideo();
         }
-        function playAudio(){
+        function prevVideo(){
+            videoActual--;
+            if(videoActual < 0){
+                videoActual = playlist.length-1;
+            }
+            videoPrincipalEnlace.src = playlist[videoActual];
+            cargarVideo();
+            playVideo();
+        }
+
+        function aleatorio(){
+            //Se tiene que poner el trunc porque sino pilla decimales y no lo encuentra en el array
+            videoActual = Math.trunc(Math.random() * playlist.length);
+            videoPrincipalEnlace.src = playlist[videoActual];
+            cargarVideo();
+            playVideo();
+        }
+
+        function cargarVideo(){
+            videoPrincipal.load();
+        }
+        function playVideo(){
             videoPrincipal.play();
         };
-        function pauseAudio(){
+        function pauseVideo(){
             videoPrincipal.pause();
         };
-        function stopAudio(){
+        function stopVideo(){
             videoPrincipal.currentTime= 0;
             videoPrincipal.pause();
-        };
-        function rewindAudio(){
-            videoPrincipal.currentTime= 0;
         };
 
     </script>
