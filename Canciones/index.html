@@ -11,9 +11,9 @@
         <h1>Example of custom audio controls</h1>
     </header>
     <main>
-        <video width="480" height="320" id="videoPrincipal">
-            <source src="" type="video/mp4">
-        </video>
+        <audio width="480" height="320" id="videoPrincipal">
+            <source src="" type="audio/mp3">
+        </audio>
         <div class="controls">
             <button type="button" onclick="playVideo()">Play</button>
             <button type="button" onclick="pauseVideo()">Pause</button>
@@ -25,20 +25,23 @@
 
     </main>
     <aside>
-        <video width="480" height="320" id="myVideo2">
-        <source src="imagenes/bobEsponja.mp4" type="video/mp4">
-    </video>
-    <video width="480" height="320" id="myVideo1">
-        <source src="imagenes/tortugasNinja.mp4" type="video/mp4">
-    </video>
-    <video width="480" height="320" id="myVideo1">
-        <source src="imagenes/baileBob.mp4" type="video/mp4">
-    </video>
+        <audio width="480" height="320" id="myVideo2">
+            <source src="imagenes/bob-esponja.mp3" type="audio/mp3">
+        </audio>
+        <audio width="480" height="320" id="myVideo1">
+            <source src="imagenes/Tortugas-ninja.mp3" type="audio/mp3">
+        </audio>
+        <audio width="480" height="320" id="myVideo1">
+            <source src="imagenes/08 - Minecraft.mp3" type="audio/mp3">
+        </audio>
+        <audio width="480" height="320" id="myVideo1">
+            <source src="imagenes/09 - Oxygène.mp3" type="audio/mp3">
+        </audio>
     </aside>
     <script>
-        //lista de videos
-        let videos = document.querySelectorAll('aside video');
-        //Direccion de los videos
+        //lista de audios
+        let videos = document.querySelectorAll('aside audio');
+        //Direccion de los audios
         let playlist = [];
         for(let i=0; i<videos.length; i++){
                 playlist.push(videos[i].querySelector('source').src);
@@ -47,7 +50,7 @@
         const videoPrincipal = document.querySelector('#videoPrincipal');
         const videoPrincipalEnlace = document.querySelector('#videoPrincipal source');
 
-          //carga de video
+          //carga de audio
         for(let i=0; i<videos.length; i++){
             videos[i].addEventListener('click',function(){
                 videoPrincipal.querySelector('source').src = playlist[i];
