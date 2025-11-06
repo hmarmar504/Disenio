@@ -14,6 +14,12 @@
         <video width="480" height="320" id="videoPrincipal">
             <source src="" type="video/mp4">
         </video>
+        <section>
+            <button onclick="playAudio()" class="btnPlay">Play</button>
+            <button onclick="pauseAudio()" class="btnPause">Pause</button>
+            <button onclick="stopAudio()" class="btnStop">Stop</button>
+            <button onclick="rewindAudio()" class="btnRewind">Rewind</button>
+        </section>
     </main>
     <aside>
         <video onclick="cambioVideo2()" width="480" height="320" id="myVideo2">
@@ -24,26 +30,41 @@
     </video>
     </aside>
     <script>
-
-        const theVideo1 = document.querySelector("#myVideo1");
-        const theVideo2 = document.querySelector('#myVideo2');
+        const sourceBob = document.createElement("source");
+            sourceBob.src = "imagenes/bobEsponja.mp4";
+            sourceBob.type = "video/mp4";
+        const sourceTurtle = document.createElement("source");
+            sourceTurtle.src = "imagenes/tortugasNinja.mp4";
+            sourceTurtle.type = "video/mp4";
+        let posicion = 0;
+        let sourceVideos = [sourceBob, sourceTurtle]
         const videoPrincipal = document.querySelector('#videoPrincipal')
         function cambioVideo2(){
             stopAudio();
-            const SourceMp4 = document.createElement("source");
-            SourceMp4.src = "imagenes/bobEsponja.mp4";
-            SourceMp4.type = "video/mp4";
             videoPrincipal.innerHTML ="";
-            videoPrincipal.appendChild(SourceMp4)
+            videoPrincipal.appendChild(sourceVideos[0]);
+            videoPrincipal.load();
             playAudio();
+            siguiente();
         };
+        function siguiente(){
+            if(sourceVideos.indexOf(videoPrincipal) != null){
+                console.log(sourceVideos.indexOf(videoPrincipal))
+                return posicion;
+            }
+            else{
+
+            }
+        }
+
         function cambioVideo1(){
             stopAudio();
-             const SourceMp4 = document.createElement("source");
-            SourceMp4.src = "imagenes/tortugasNinja.mp4";
-            SourceMp4.type = "video/mp4";
             videoPrincipal.innerHTML ="";
-            videoPrincipal.appendChild(SourceMp4)
+            videoPrincipal.appendChild(sourceVideos[1]);
+            console.log(videoPrincipal)
+            videoPrincipal.load();
+            playAudio();
+            siguiente();
         }
         function playAudio(){
             videoPrincipal.play();

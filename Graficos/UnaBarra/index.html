@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <script>
+        const myChart = document.getElementById("myChart");
+        const data = {
+            labels: [
+                'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octuble','Noviembre','Diciembre'
+            ],
+            datasets: [{
+                label: 'My First Dataset',
+                data: [65, 59, 80, 81, 56, 55, 40, 50, 65, 45, 80, 70],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        new Chart(myChart,{
+            type:"bar",
+            data: data,
+            options:{
+                scales:{
+                    y:{
+                        begintAtZero: true
+                    }
+                }
+            }
+        });
+        //una solo de lluvia, luego otra con lluvia y temperatura y luego otra con lluvia con barChart y temperatura con lineChart
+        
+
+    </script>
+</body>
+</html>
