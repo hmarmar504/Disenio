@@ -1,0 +1,79 @@
+:root{
+    --colorBlanco:#c9d8fa;
+    --colorAzul:#015aa3;
+    --colorVerde:#08d332;
+}
+body{
+    margin: 0px;
+    font-family:Ubuntu,sans-serif;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--colorAzul);
+    color: var(--colorBlanco);
+    justify-content: space-between;
+    padding-left:10% ;
+    padding-right:10%;
+    font-size: large;
+}
+ul{
+    list-style: none;
+    display:flex;
+    flex-direction: row;
+    gap:25px;
+}
+main{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.tituloBarra{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+}
+.tituloBarra :nth-child(1){
+    margin: 0px;
+}
+.contenedor{
+border-radius: 10px;
+box-shadow: grey 0px 0px 15px 0px;
+padding: 16px;
+margin-bottom: 32px;
+}
+table{
+    height: 50px;
+    width: 100%;
+    border-spacing: 0px;
+}
+table th{
+    height: 50px;
+    width: 4.16%;
+    padding: 0px;
+}
+table th:nth-child(odd){
+    background-color: red;
+}
+table th:nth-child(even){
+    background-color: green;
+}
+#precio{
+    justify-self: center;
+}
+.infoPrecio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.infoPrecio p{
+    margin: 0px;
+}
+.infoPrecio p:nth-child(1){
+    font-size: xx-large;
+    font-weight: bold;
+}
+.infoPreci p:nth-child(2){
+    color: var(--colorVerde);
+}

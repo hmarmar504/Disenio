@@ -14,6 +14,14 @@
         <video width="480" height="320" id="videoPrincipal">
             <source src="" type="video/mp4">
         </video>
+<<<<<<< HEAD
+        <section>
+            <button onclick="playAudio()" class="btnPlay">Play</button>
+            <button onclick="pauseAudio()" class="btnPause">Pause</button>
+            <button onclick="stopAudio()" class="btnStop">Stop</button>
+            <button onclick="rewindAudio()" class="btnRewind">Rewind</button>
+        </section>
+=======
         <div class="controls">
             <button type="button" onclick="playVideo()">Play</button>
             <button type="button" onclick="pauseVideo()">Pause</button>
@@ -23,6 +31,7 @@
             <button type="button" onclick="aleatorio()">Aleatorio</button>
         </div>
 
+>>>>>>> 360a3d4a39e07565772b7d1c43cca5ee051f778d
     </main>
     <aside>
         <video width="480" height="320" id="myVideo2">
@@ -36,6 +45,43 @@
     </video>
     </aside>
     <script>
+<<<<<<< HEAD
+        const sourceBob = document.createElement("source");
+            sourceBob.src = "imagenes/bobEsponja.mp4";
+            sourceBob.type = "video/mp4";
+        const sourceTurtle = document.createElement("source");
+            sourceTurtle.src = "imagenes/tortugasNinja.mp4";
+            sourceTurtle.type = "video/mp4";
+        let posicion = 0;
+        let sourceVideos = [sourceBob, sourceTurtle]
+        const videoPrincipal = document.querySelector('#videoPrincipal')
+        function cambioVideo2(){
+            stopAudio();
+            videoPrincipal.innerHTML ="";
+            videoPrincipal.appendChild(sourceVideos[0]);
+            videoPrincipal.load();
+            playAudio();
+            siguiente();
+        };
+        function siguiente(){
+            if(sourceVideos.indexOf(videoPrincipal) != null){
+                console.log(sourceVideos.indexOf(videoPrincipal))
+                return posicion;
+            }
+            else{
+
+            }
+        }
+
+        function cambioVideo1(){
+            stopAudio();
+            videoPrincipal.innerHTML ="";
+            videoPrincipal.appendChild(sourceVideos[1]);
+            console.log(videoPrincipal)
+            videoPrincipal.load();
+            playAudio();
+            siguiente();
+=======
         //lista de videos
         let videos = document.querySelectorAll('aside video');
         //Direccion de los videos
@@ -65,6 +111,7 @@
             videoPrincipalEnlace.src = playlist[videoActual];
             cargarVideo();
             playVideo();
+>>>>>>> 360a3d4a39e07565772b7d1c43cca5ee051f778d
         }
         function prevVideo(){
             videoActual--;

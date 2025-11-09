@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <div id="datos">
+        <div id="datosLluvia">
+
+        </div>
+        <div id="datosTemperatura">
+
+        </div>
+    </div>
+    <script>
+        const myChart = document.getElementById("myChart");
+        const datosLluvia = document.getElementById('datosLluvia');
+        const datosTemperatura = document.getElementById('datosTemperatura');
+        //CARGA DE LAS TEMPERATURAS
+        let lluvia = [];
+        let temperatura = [];
+        for(let i = 0; i<12;i++){
+            let dato = prompt('Ingresa una cantidad de lluvia');
+            lluvia.push(dato);
+        }
+        for(let i = 0; i<12;i++){
+            let dato = prompt('Ingresa una temperatura');
+            temperatura.push(dato);
+        }
+        //INICIO DE LA TABLA
+        const data = {
+            labels: [
+                'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octuble','Noviembre','Diciembre'
+            ],
+            datasets: [{
+                type:'bar',
+                label: 'LLuvia',
+                data: lluvia,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                ],
+                borderWidth: 1
+            },
+            {
+                type:'line',
+                label: 'Temperatura',
+                data: temperatura,
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                ],
+                borderColor: [
+                    'rgb(75, 192, 192)',
+                ],
+                borderWidth: 1
+            }]
+        };
+        new Chart(myChart,{
+            data: data,
+            options:{
+                scales:{
+                    y:{
+                        begintAtZero: true
+                    }
+                }
+            }
+        });
+        //MUESTRA DE DATOS EN FORMA DE ARRAY
+        datosLluvia.innerHTML='datos sobre la lluvia:'+lluvia;
+        datosTemperatura.innerHTML='datos sobre la temperatura:'+temperatura;
+    </script>
+</body>
+</html>
