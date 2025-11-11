@@ -14,9 +14,8 @@
     ?>
     <script>
         let infoPrecios = <?php echo json_encode($datos); ?>;
-        console.log(infoPrecios)
     </script>
-    <script src="precioLuz.js"></script>
+    
     <header>
         <nav>
             <div class="imagenNavega"><img src="imagenes/logoCabecera.png"></div>
@@ -113,6 +112,6 @@
             <article class="contenedor"></article>
         </section>
     </main>
-    
+    <script src="precioLuz.js"></script>
 </body>
 </html>
