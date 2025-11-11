@@ -2,6 +2,8 @@
     --colorBlanco:#c9d8fa;
     --colorAzul:#015aa3;
     --colorVerde:#08d332;
+    --colorNaranja:#f4a321;
+    --colorRojo:#f23c25;
 }
 body{
     margin: 0px;
@@ -53,11 +55,36 @@ table th{
     width: 4.16%;
     padding: 0px;
 }
-#tramoEconomico p:nth-child(2){
-    color: green;
+.verde{
+    color: var(--colorVerde);
+}
+.rojo{
+    color:var(--colorRojo);
+}
+.naranja{
+    color: var(--colorNaranja);
+}
+.fondoVerde{
+    background-color: var(--colorVerde);
+}
+.fondoNaranja{
+    background-color: var(--colorNaranja);
+}
+.fondoRojo{
+    background-color: var(--colorRojo);
 }
 #precio{
     justify-self: center;
+}
+.contenedorMedio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 32px;
+}
+.contenedorMedio .contenedor{
+    margin: 0px;
+    width: 25%;
 }
 .infoPrecio{
     display: flex;
@@ -71,6 +98,28 @@ table th{
     font-size: xx-large;
     font-weight: bold;
 }
-.infoPreci p:nth-child(2){
-    color: var(--colorVerde);
+.pepe{
+    background-color: black;
+}
+#lista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#lista >div{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 60%;
+}
+.listaPrecio{
+    margin-left: auto;
+}
+.bolaColor{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
 }

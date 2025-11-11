@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -87,31 +88,70 @@
                 </div>
                 <p>Este es el tramo de 2 o 3 horas mas economicas durante el dia ( de 7 a 21 horas), que puede o no contener la hora mas economica del dia</p>
             </article>
-            <article class="contenedor">
-                <p>Precio medio del dia</p>
-                <p>07/11/2025</p>
-                <div class="infoPrecio" id="precioMedio">
-                    <p>0.1328</p>
-                    <p>€/kWh</p>
-                </div>
+            <article class="contenedorMedio">
+                <article class="contenedor">
+                    <p>Precio medio del dia</p>
+                    <p>07/11/2025</p>
+                    <div class="infoPrecio" id="precioMedio">
+                        <p>0.1328</p>
+                        <p>€/kWh</p>
+                    </div>
+                </article>
+                <article class="contenedor">
+                    <p>Precio mas bajo del dia</p>
+                    <p>07/11/2025</p>
+                    <div class="infoPrecio" id="precioBajo">
+                        <p>04-05h</p>
+                        <p>0.07506 €/kWh</p>
+                    </div>
+                </article>
+                <article class="contenedor"><p>Precio mas alto del dia</p>
+                    <p>07/11/2025</p>
+                    <div class="infoPrecio" id="precioAlto">
+                        <p>20-21h</p>
+                        <p>0.22805 €/kWh</p>
+                    </div>
+                </article>
             </article>
-            <article class="contenedor">
-                <p>Precio mas bajo del dia</p>
-                <p>07/11/2025</p>
-                <div class="infoPrecio" id="precioBajo">
-                    <p>04-05h</p>
-                    <p>0.07506 €/kWh</p>
-                </div>
+            <article class="contenedor" id="lista">
             </article>
-            <article class="contenedor"><p>Precio mas alto del dia</p>
-            <p>07/11/2025</p>
-            <div class="infoPrecio" id="precioAlto">
-                <p>20-21h</p>
-                <p>0.22805 €/kWh</p>
-            </div></article>
-            <article class="contenedor"></article>
+            <article>
+                <script src="precioLuz.js"></script>
+                    <div>
+                        <canvas id="myChart"></canvas>
+                    </div>
+                <script>
+                    const myChart = document.getElementById("myChart");
+
+const data = {
+    labels: infoPreciosHora.map(h => `${h}:00-${Number(h)+1}:00`),
+    datasets: [{
+        type: 'line',
+        label: 'Consumo (€/kWh)',
+        data: infoPreciosConsumo.map(v => parseFloat(v)),
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgb(75, 192, 192)',
+        borderWidth: 1,
+        tension: 0.2
+    }]
+};
+
+new Chart(myChart, {
+    type: 'line',
+    data: data,
+    options: {
+        scales: {
+            y: {
+                beginAtZero: false
+            }
+        }
+    }
+});
+
+                </script>
+            </article>
         </section>
     </main>
-    <script src="precioLuz.js"></script>
+    
 </body>
 </html>
