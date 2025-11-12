@@ -26,8 +26,6 @@ infoPrecios.forEach(element => {
 //
 function cargarSelect(){
     infoNumeroDias.forEach(element =>{
-        console.log(selectDia.options)
-        console.log(element);
         selectDia.options.add(new Option(element.dia));
     });
 }
@@ -188,6 +186,9 @@ function listaConsumo(){
         lista.appendChild(bloque);
     })
 }
+cargarSelect();
+selectDia.value = infoPrecios[0].dia;
+
 barraColores();
 mejorTramo();
 precioMedioDia();

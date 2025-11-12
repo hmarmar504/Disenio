@@ -8,25 +8,30 @@
 <body>
     <?php 
     function cogerDatos(){
-        $conexion = new PDO('mysql:host=localhost;dbname=precioluz;charset=utf8','root','');
-        $fecha = $_REQUEST['fechaLuz'];
+    $conexion = new PDO('mysql:host=localhost;dbname=precioluz;charset=utf8','root','');
+    $respuesta = [];
 
-        if($fecha){
-            $consulta = $conexion->query("SELECT * from consumodia WHERE dia = ".$fecha."");
-            $respuesta = $consulta->fetchAll(PDO::FETCH_ASSOC);
-        }
-        return $respuesta;
+    $fecha = $_REQUEST['fechaLuz'] ?? null;
+    if ($fecha === null || $fecha === '') {
+        $row = $conexion->query("SELECT MIN(dia) AS dia FROM consumodia")->fetch(PDO::FETCH_ASSOC);
+        $fecha = $row ? $row['dia'] : 1;
     }
+
+    $stmt = $conexion->prepare("SELECT hora, consumo, dia FROM consumodia WHERE dia = ? ORDER BY hora");
+    $stmt->execute([$fecha]);
+    $respuesta = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $respuesta;
+}
+
     function cogerDias(){
         $conexion = new PDO('mysql:host=localhost;dbname=precioluz;charset=utf8','root','');
-        $fecha = $_REQUEST['fechaLuz'];
+        $consulta = $conexion->query("SELECT DISTINCT dia FROM consumodia ORDER BY dia ASC");
 
-        if($fecha){
-            $consulta = $conexion->query("SELECT DISTINCT dia FROM consumodia");
-            $respuesta = $consulta->fetchAll(PDO::FETCH_ASSOC);
-        }
-        return $respuesta;
+        $respuesta = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        return $respuesta ?: [];
     }
+
     ?>
 </body>
 </html>

@@ -43,10 +43,11 @@
                 <h2>Precio de la luz por horas</h2>
                 <h2>Informacion del dia: <b class="fecha"></b></h2>
             </article>
-            <form action="index.php">
-                <input type="text" id="fechaLuz" name="fechaLuz" value="1">
-                <input type="submit" value="datos">
+            <form action="index.php" method="get">
+                <label for="select">Día</label>
+                <select id="select" name="fechaLuz" onchange="this.form.submit()"></select>
             </form>
+
             
             <article class="contenedor">
                 <p>Grafica el dia: <b class="fecha">07/11/25</b></p>
