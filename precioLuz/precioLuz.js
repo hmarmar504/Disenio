@@ -188,7 +188,6 @@ function listaConsumo(){
         lista.appendChild(bloque);
     })
 }
-cargarSelect();
 barraColores();
 mejorTramo();
 precioMedioDia();

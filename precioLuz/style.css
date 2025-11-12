@@ -26,8 +26,8 @@ ul{
     gap:25px;
 }
 main{
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 7%;
+    padding-right: 7%;
 }
 #tituloBarra{
     margin-top: 50px;
@@ -41,7 +41,7 @@ main{
 }
 .contenedor{
 border-radius: 10px;
-box-shadow: grey 0px 0px 15px 0px;
+box-shadow: 4px 8px 24px rgba(16, 58, 97, .15);
 padding: 16px;
 margin-bottom: 32px;
 }
@@ -83,7 +83,10 @@ table th{
 }
 .contenedorMedio .contenedor{
     margin: 0px;
-    width: 27%;
+    width: 30%;
+}
+.contenedorMedio .infoPrecio{
+    margin-bottom: 30px;
 }
 .infoPrecio{
     display: flex;
@@ -94,7 +97,7 @@ table th{
     margin: 0px;
 }
 .infoPrecio p:nth-child(1){
-    font-size: xx-large;
+    font-size: 36px;
     font-weight: bold;
 }
 .pepe{

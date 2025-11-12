@@ -86,7 +86,7 @@
                     <p>6-9h</p>
                     <p>0.11 €/kWh</p>
                 </div>
-                <p>Este es el tramo de 2 o 3 horas mas economicas durante el dia ( de 7 a 21 horas), que puede o no contener la hora mas economica del dia</p>
+                <p>Este es el tramo de horas mas economicas durante el dia, que puede o no contener la hora mas economica del dia</p>
             </article>
             <article class="contenedorMedio">
                 <article class="contenedor">
