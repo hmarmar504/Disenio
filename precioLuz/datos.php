@@ -17,6 +17,16 @@
         }
         return $respuesta;
     }
+    function cogerDias(){
+        $conexion = new PDO('mysql:host=localhost;dbname=precioluz;charset=utf8','root','');
+        $fecha = $_REQUEST['fechaLuz'];
+
+        if($fecha){
+            $consulta = $conexion->query("SELECT DISTINCT dia FROM consumodia");
+            $respuesta = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $respuesta;
+    }
     ?>
 </body>
 </html>

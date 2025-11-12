@@ -29,14 +29,14 @@ main{
     padding-left: 10%;
     padding-right: 10%;
 }
-.tituloBarra{
+#tituloBarra{
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0px;
 }
-.tituloBarra :nth-child(1){
+#tituloBarra :nth-child(1){
     margin: 0px;
 }
 .contenedor{
@@ -46,12 +46,11 @@ padding: 16px;
 margin-bottom: 32px;
 }
 table{
-    height: 50px;
     width: 100%;
     border-spacing: 0px;
 }
 table th{
-    height: 50px;
+    height: 30px;
     width: 4.16%;
     padding: 0px;
 }
@@ -79,12 +78,12 @@ table th{
 .contenedorMedio{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 32px;
 }
 .contenedorMedio .contenedor{
     margin: 0px;
-    width: 25%;
+    width: 27%;
 }
 .infoPrecio{
     display: flex;

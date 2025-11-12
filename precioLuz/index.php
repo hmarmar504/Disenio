@@ -12,11 +12,13 @@
     require 'datos.php';
     $fecha = 1;
     $datos = cogerDatos($fecha);
+    $dias = cogerDias();
     ?>
     <script>
         let infoPrecios = <?php echo json_encode($datos); ?>;
+        let infoNumeroDias = <?php echo json_encode($dias); ?>;
     </script>
-    
+
     <header>
         <nav>
             <div class="imagenNavega"><img src="imagenes/logoCabecera.png"></div>
@@ -35,12 +37,11 @@
     <main>
         <section class="inicio">
             <h1>Consulta el precio de la luz hot: Detalles y Evolucion de la tarifa PVPC</h1>
-            <p>Actualizado el dia 07/11/2025 3 minutos de lectura</p>
         </section>
         <section class="barraLuz">
-            <article class="tituloBarra">
+            <article id="tituloBarra">
                 <h2>Precio de la luz por horas</h2>
-                <h2>07/11/25</h2>
+                <h2>Informacion del dia: <b class="fecha"></b></h2>
             </article>
             <form action="index.php">
                 <input type="text" id="fechaLuz" name="fechaLuz" value="1">
@@ -48,7 +49,7 @@
             </form>
             
             <article class="contenedor">
-                <p>Grafica el dia 07/11/25</p>
+                <p>Grafica el dia: <b class="fecha">07/11/25</b></p>
                 <table id="lineaLuz">
                     <tr>
                         <th id="tabla0"></th>
@@ -77,7 +78,6 @@
                         <th id="tabla23"></th>
                     </tr>
                 </table>
-                <p id="precio">PrecioHoraPuntaOLoQueSea</p>
             </article>
             <article class="contenedor">
                 <b>¿Sabias que?</b>
@@ -90,23 +90,23 @@
             </article>
             <article class="contenedorMedio">
                 <article class="contenedor">
-                    <p>Precio medio del dia</p>
-                    <p>07/11/2025</p>
-                    <div class="infoPrecio" id="precioMedio">
-                        <p>0.1328</p>
-                        <p>€/kWh</p>
-                    </div>
-                </article>
-                <article class="contenedor">
                     <p>Precio mas bajo del dia</p>
-                    <p>07/11/2025</p>
+                    <p class="fecha">07/11/2025</p>
                     <div class="infoPrecio" id="precioBajo">
                         <p>04-05h</p>
                         <p>0.07506 €/kWh</p>
                     </div>
                 </article>
+                <article class="contenedor">
+                    <p>Precio medio del dia</p>
+                    <p class="fecha">07/11/2025</p>
+                    <div class="infoPrecio" id="precioMedio">
+                        <p>0.1328</p>
+                        <p>€/kWh</p>
+                    </div>
+                </article>
                 <article class="contenedor"><p>Precio mas alto del dia</p>
-                    <p>07/11/2025</p>
+                    <p class="fecha">07/11/2025</p>
                     <div class="infoPrecio" id="precioAlto">
                         <p>20-21h</p>
                         <p>0.22805 €/kWh</p>
@@ -116,42 +116,12 @@
             <article class="contenedor" id="lista">
             </article>
             <article>
-                <script src="precioLuz.js"></script>
                     <div>
                         <canvas id="myChart"></canvas>
                     </div>
-                <script>
-                    const myChart = document.getElementById("myChart");
-
-const data = {
-    labels: infoPreciosHora.map(h => `${h}:00-${Number(h)+1}:00`),
-    datasets: [{
-        type: 'line',
-        label: 'Consumo (€/kWh)',
-        data: infoPreciosConsumo.map(v => parseFloat(v)),
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgb(75, 192, 192)',
-        borderWidth: 1,
-        tension: 0.2
-    }]
-};
-
-new Chart(myChart, {
-    type: 'line',
-    data: data,
-    options: {
-        scales: {
-            y: {
-                beginAtZero: false
-            }
-        }
-    }
-});
-
-                </script>
             </article>
         </section>
     </main>
-    
+    <script src="precioLuz.js"></script>
 </body>
 </html>
