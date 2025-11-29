@@ -32,9 +32,10 @@
                 <h2>Precio de la luz por horas</h2>
                 <h2>07/11/25</h2>
             </article>
+            <input type="date" id="fechaLuz" name="fechaLuz" value="2025-11-07">
             <article class="contenedor">
                 <p>Grafica el dia 07/11/25</p>
-                <table>
+                <table id="lineaLuz">
                     <tr>
                         <th id="tabla1"></th>
                         <th id="tabla2"></th>
@@ -67,7 +68,7 @@
             <article class="contenedor">
                 <b>¿Sabias que?</b>
                 <p>Si no quieres modificar tu rutina, hoy podrias utilizar este tramo para poner lavadoras o cocinar ya que esta ligeramente mas bajo</p>
-                <div class="infoPrecio">
+                <div class="infoPrecio" id="tramoEconomico">
                     <p>6-9h</p>
                     <p>0.11 €/kWh</p>
                 </div>
@@ -76,7 +77,7 @@
             <article class="contenedor">
                 <p>Precio medio del dia</p>
                 <p>07/11/2025</p>
-                <div class="infoPrecio">
+                <div class="infoPrecio" id="precioMedio">
                     <p>0.1328</p>
                     <p>€/kWh</p>
                 </div>
@@ -84,14 +85,14 @@
             <article class="contenedor">
                 <p>Precio mas bajo del dia</p>
                 <p>07/11/2025</p>
-                <div class="infoPrecio">
+                <div class="infoPrecio" id="precioBajo">
                     <p>04-05h</p>
                     <p>0.07506 €/kWh</p>
                 </div>
             </article>
             <article class="contenedor"><p>Precio mas alto del dia</p>
             <p>07/11/2025</p>
-            <div class="infoPrecio">
+            <div class="infoPrecio" id="precioAlto">
                 <p>20-21h</p>
                 <p>0.22805 €/kWh</p>
             </div></article>
