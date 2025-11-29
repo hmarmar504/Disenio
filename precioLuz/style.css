@@ -2,6 +2,8 @@
     --colorBlanco:#c9d8fa;
     --colorAzul:#015aa3;
     --colorVerde:#08d332;
+    --colorNaranja:#f4a321;
+    --colorRojo:#f23c25;
 }
 body{
     margin: 0px;
@@ -24,43 +26,67 @@ ul{
     gap:25px;
 }
 main{
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 7%;
+    padding-right: 7%;
 }
-.tituloBarra{
+#tituloBarra{
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0px;
 }
-.tituloBarra :nth-child(1){
+#tituloBarra :nth-child(1){
     margin: 0px;
 }
 .contenedor{
 border-radius: 10px;
-box-shadow: grey 0px 0px 15px 0px;
+box-shadow: 4px 8px 24px rgba(16, 58, 97, .15);
 padding: 16px;
 margin-bottom: 32px;
 }
 table{
-    height: 50px;
     width: 100%;
     border-spacing: 0px;
 }
 table th{
-    height: 50px;
+    height: 30px;
     width: 4.16%;
     padding: 0px;
 }
-table th:nth-child(odd){
-    background-color: red;
+.verde{
+    color: var(--colorVerde);
 }
-table th:nth-child(even){
-    background-color: green;
+.rojo{
+    color:var(--colorRojo);
+}
+.naranja{
+    color: var(--colorNaranja);
+}
+.fondoVerde{
+    background-color: var(--colorVerde);
+}
+.fondoNaranja{
+    background-color: var(--colorNaranja);
+}
+.fondoRojo{
+    background-color: var(--colorRojo);
 }
 #precio{
     justify-self: center;
+}
+.contenedorMedio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+.contenedorMedio .contenedor{
+    margin: 0px;
+    width: 30%;
+}
+.contenedorMedio .infoPrecio{
+    margin-bottom: 30px;
 }
 .infoPrecio{
     display: flex;
@@ -71,9 +97,31 @@ table th:nth-child(even){
     margin: 0px;
 }
 .infoPrecio p:nth-child(1){
-    font-size: xx-large;
+    font-size: 36px;
     font-weight: bold;
 }
-.infoPreci p:nth-child(2){
-    color: var(--colorVerde);
+.pepe{
+    background-color: black;
+}
+#lista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#lista >div{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 60%;
+}
+.listaPrecio{
+    margin-left: auto;
+}
+.bolaColor{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
 }
