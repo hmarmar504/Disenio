@@ -7,6 +7,9 @@
 </head>
 <body>
     <?php 
+<<<<<<< HEAD
+    
+=======
     function cogerDatos(){
     $conexion = new PDO('mysql:host=localhost;dbname=precioluz;charset=utf8','root','');
     $respuesta = [];
@@ -32,6 +35,7 @@
         return $respuesta ?: [];
     }
 
+>>>>>>> 81fcde50d7cfbdc32f6631b7ccf65d831530b1f5
     ?>
 </body>
 </html>

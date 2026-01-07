@@ -43,6 +43,11 @@
                 <h2>Precio de la luz por horas</h2>
                 <h2>Informacion del dia: <b class="fecha"></b></h2>
             </article>
+<<<<<<< HEAD:precioLuz/index.html
+            <input type="date" id="fechaLuz" name="fechaLuz" value="2025-11-07">
+            <article class="contenedor">
+                <p>Grafica el dia 07/11/25</p>
+=======
             <form action="index.php" method="get">
                 <label for="select">Día</label>
                 <select id="select" name="fechaLuz" onchange="this.form.submit()"></select>
@@ -51,6 +56,7 @@
             
             <article class="contenedor">
                 <p>Grafica el dia: <b class="fecha">07/11/25</b></p>
+>>>>>>> 81fcde50d7cfbdc32f6631b7ccf65d831530b1f5:precioLuz/index.php
                 <table id="lineaLuz">
                     <tr>
                         <th id="tabla0"></th>
@@ -89,6 +95,31 @@
                 </div>
                 <p>Este es el tramo de horas mas economicas durante el dia, que puede o no contener la hora mas economica del dia</p>
             </article>
+<<<<<<< HEAD:precioLuz/index.html
+            <article class="contenedor">
+                <p>Precio medio del dia</p>
+                <p>07/11/2025</p>
+                <div class="infoPrecio" id="precioMedio">
+                    <p>0.1328</p>
+                    <p>€/kWh</p>
+                </div>
+            </article>
+            <article class="contenedor">
+                <p>Precio mas bajo del dia</p>
+                <p>07/11/2025</p>
+                <div class="infoPrecio" id="precioBajo">
+                    <p>04-05h</p>
+                    <p>0.07506 €/kWh</p>
+                </div>
+            </article>
+            <article class="contenedor"><p>Precio mas alto del dia</p>
+            <p>07/11/2025</p>
+            <div class="infoPrecio" id="precioAlto">
+                <p>20-21h</p>
+                <p>0.22805 €/kWh</p>
+            </div></article>
+            <article class="contenedor"></article>
+=======
             <article class="contenedorMedio">
                 <article class="contenedor">
                     <p>Precio mas bajo del dia</p>
@@ -121,6 +152,7 @@
                         <canvas id="myChart"></canvas>
                     </div>
             </article>
+>>>>>>> 81fcde50d7cfbdc32f6631b7ccf65d831530b1f5:precioLuz/index.php
         </section>
     </main>
     <script src="precioLuz.js"></script>

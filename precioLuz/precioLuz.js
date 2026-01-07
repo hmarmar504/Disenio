@@ -1,12 +1,20 @@
+<<<<<<< HEAD
+=======
 //
 //Objetos del DOM que cambiaremos
 //
+>>>>>>> 81fcde50d7cfbdc32f6631b7ccf65d831530b1f5
 const fechaLuz = document.getElementById("fechaLuz");
 const lineaLuz = document.getElementById("lineaLuz");
 const infoPrecioBajo= document.getElementById("precioBajo");
 const infoPrecioMedio = document.getElementById("precioMedio");
 const infoPrecioAlto = document.getElementById("precioAlto");
 const infoTramoEconomico = document.getElementById("tramoEconomico");
+<<<<<<< HEAD
+
+fechaLuz.addEventListener("change",function(){
+const datosFecha = [];
+=======
 const lista = document.getElementById("lista");
 
 const tituloBarra = document.querySelectorAll(".fecha");
@@ -223,4 +231,5 @@ new Chart(myChart, {
             }
         }
     }
+>>>>>>> 81fcde50d7cfbdc32f6631b7ccf65d831530b1f5
 });

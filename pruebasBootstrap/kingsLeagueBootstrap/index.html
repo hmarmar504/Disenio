@@ -26,20 +26,260 @@
                 <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
             </svg>
         </div>
-        <div class="bg-white d-flex">
-            <div width="90px" heidht="120px"><img src="imagenes/KingsLeagueLogo2.png" alt="" height="120px" width="90px" class="overflow-visible mx-4 position-absolute"></div>
-            <nav class=" d-flex col gap-2 ">
-                <div>Spain</div>
-                <div>Mexico</div>
-                <div>Italy</div>
-                <div>Brazil</div>
-                <div>France</div>
-                <div>Germany</div>
-                <div>MENA</div>
-                <div>KWC Nations</div>
-                <div>KWC Clubs</div>
+        <div class="bg-white d-flex align-items-center py-3" style="height: 70px;">
+            <img src="imagenes/KingsLeagueLogo2.png" alt="" height="120px" width="90px" class="overflow-visible mx-4 z-3">
+            <nav class="nav gap-3" role="tablist">
+                <a class="nav-link text-warning active"
+                id="tab-spain"
+                data-bs-toggle="pill"
+                href="#submenu-spain"
+                role="tab"
+                aria-controls="submenu-spain"
+                aria-selected="true">
+                    Spain
+                </a>
+
+                <a class="nav-link text-black"
+                id="tab-mexico"
+                data-bs-toggle="pill"
+                href="#submenu-mexico"
+                role="tab"
+                aria-controls="submenu-mexico"
+                aria-selected="false">
+                    Mexico
+                </a>
+
+                <a class="nav-link text-black"
+                id="tab-italy"
+                data-bs-toggle="pill"
+                href="#submenu-italy"
+                role="tab"
+                aria-controls="submenu-italy"
+                aria-selected="false">
+                    Italy
+                </a>
+
+                <a class="nav-link text-black"
+                id="tab-brazil"
+                data-bs-toggle="pill"
+                href="#submenu-brazil"
+                role="tab"
+                aria-controls="submenu-brazil"
+                aria-selected="false">
+                    Brazil
+                </a>
+
+                <a class="nav-link text-black"
+                id="tab-france"
+                data-bs-toggle="pill"
+                href="#submenu-france"
+                role="tab"
+                aria-controls="submenu-france"
+                aria-selected="false">
+                    France
+                </a>
+
+                <a class="nav-link text-black"
+                id="tab-germany"
+                data-bs-toggle="pill"
+                href="#submenu-germany"
+                role="tab"
+                aria-controls="submenu-germany"
+                aria-selected="false">
+                    Germany
+                </a>
+
+                <a class="nav-link text-black"
+                id="tab-mena"
+                data-bs-toggle="pill"
+                href="#submenu-mena"
+                role="tab"
+                aria-controls="submenu-mena"
+                aria-selected="false">
+                    MENA
+                </a>
+
+                <a class="nav-link text-black"
+                id="tab-nations"
+                data-bs-toggle="pill"
+                href="#submenu-nations"
+                role="tab"
+                aria-controls="submenu-nations"
+                aria-selected="false">
+                    KWC Nations
+                </a>
+
+                <a class="nav-link text-black"
+                id="tab-clubs"
+                data-bs-toggle="pill"
+                href="#submenu-clubs"
+                role="tab"
+                aria-controls="submenu-clubs"
+                aria-selected="false">
+                    KWC Clubs
+                </a>
             </nav>
         </div>
+
+        <div class="bg-black text-white position-relative z" style="height: 70px;">
+            <div class="tab-content h-100">
+
+                <div class="tab-pane show active h-100"
+                    id="submenu-spain"
+                    role="tabpanel"
+                    aria-labelledby="tab-spain">
+                    <div class="d-flex align-items-center gap-4 h-100">
+                        <div style="width: 120px;"></div>
+                        <div class="d-flex gap-4">
+                            <div>CLASIFICACION</div>
+                            <div>PARTIDOS</div>
+                            <div>EQUIPOS</div>
+                            <div>JUGADORES</div>
+                            <div>ESTADISTICAS</div>
+                            <div>NOTICIAS</div>
+                            <div>FANTASY</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane h-100"
+                    id="submenu-mexico"
+                    role="tabpanel"
+                    aria-labelledby="tab-mexico">
+                    <div class="d-flex align-items-center gap-4 h-100">
+                        <div style="width: 120px;"></div>
+                        <div class="d-flex gap-4">
+                            <div>CLASIFICACION</div>
+                            <div>PARTIDOS</div>
+                            <div>EQUIPOS</div>
+                            <div>JUGADORES</div>
+                            <div>ESTADISTICAS</div>
+                            <div>NOTICIAS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane h-100"
+                    id="submenu-italy"
+                    role="tabpanel"
+                    aria-labelledby="tab-italy">
+                    <div class="d-flex align-items-center gap-4 h-100">
+                        <div style="width: 120px;"></div>
+                        <div class="d-flex gap-4">
+                            <div>CLASIFICACION</div>
+                            <div>PARTIDOS</div>
+                            <div>EQUIPOS</div>
+                            <div>JUGADORES</div>
+                            <div>ESTADISTICAS</div>
+                            <div>NOTICIAS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane h-100"
+                    id="submenu-brazil"
+                    role="tabpanel"
+                    aria-labelledby="tab-brazil">
+                    <div class="d-flex align-items-center gap-4 h-100">
+                        <div style="width: 120px;"></div>
+                        <div class="d-flex gap-4">
+                            <div>CLASIFICACION</div>
+                            <div>PARTIDOS</div>
+                            <div>EQUIPOS</div>
+                            <div>JUGADORES</div>
+                            <div>ESTADISTICAS</div>
+                            <div>NOTICIAS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane h-100"
+                    id="submenu-france"
+                    role="tabpanel"
+                    aria-labelledby="tab-france">
+                    <div class="d-flex align-items-center gap-4 h-100">
+                        <div style="width: 120px;"></div>
+                        <div class="d-flex gap-4">
+                            <div>CLASIFICACION</div>
+                            <div>PARTIDOS</div>
+                            <div>EQUIPOS</div>
+                            <div>JUGADORES</div>
+                            <div>ESTADISTICAS</div>
+                            <div>NOTICIAS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane h-100"
+                    id="submenu-germany"
+                    role="tabpanel"
+                    aria-labelledby="tab-germany">
+                    <div class="d-flex align-items-center gap-4 h-100">
+                        <div style="width: 120px;"></div>
+                        <div class="d-flex gap-4">
+                            <div>CLASIFICACION</div>
+                            <div>PARTIDOS</div>
+                            <div>EQUIPOS</div>
+                            <div>JUGADORES</div>
+                            <div>ESTADISTICAS</div>
+                            <div>NOTICIAS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane h-100"
+                    id="submenu-mena"
+                    role="tabpanel"
+                    aria-labelledby="tab-mena">
+                    <div class="d-flex align-items-center gap-4 h-100">
+                        <div style="width: 120px;"></div>
+                        <div class="d-flex gap-4">
+                            <div>EQUIPOS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane h-100"
+                    id="submenu-nations"
+                    role="tabpanel"
+                    aria-labelledby="tab-nations">
+                    <div class="d-flex align-items-center gap-4 h-100">
+                        <div style="width: 120px;"></div>
+                        <div class="d-flex gap-4">
+                            <div>CLASIFICACION</div>
+                            <div>PARTIDOS</div>
+                            <div>EQUIPOS</div>
+                            <div>JUGADORES</div>
+                            <div>ESTADISTICAS</div>
+                            <div>TORNEO</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane h-100"
+                    id="submenu-clubs"
+                    role="tabpanel"
+                    aria-labelledby="tab-clubs">
+                    <div class="d-flex align-items-center gap-4 h-100">
+                        <div style="width: 120px;"></div>
+                        <div class="d-flex gap-4">
+                            <div>CLASIFICACION</div>
+                            <div>PARTIDOS</div>
+                            <div>EQUIPOS</div>
+                            <div>JUGADORES</div>
+                            <div>ESTADISTICAS</div>
+                            <div>TORNEO</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex text-white position-absolute top-0 end-0 h-100 justify-content-center align-items-center gap-3">
+                <div type="button" class="btn d-flex align-items-center justify-content-center p-4 rounded-3 btn-dark h-75">Directo</div>
+                <div type="button" class="btn d-flex align-items-center justify-content-center p-4 rounded-3 btn-dark h-75">Entradas</div>
+                <div type="button" class="btn d-flex align-items-center justify-content-center p-4 rounded-3 btn-warning h-75">Tienda</div>
+            </div>
+        </div>
+        
     </header>
 </body>
 </html>
