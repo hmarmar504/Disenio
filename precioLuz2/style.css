@@ -1,0 +1,24 @@
+/* Bootstrap lleva la mayor parte del layout.
+   Aquí dejamos solo pequeños ajustes propios del proyecto. */
+
+.logo{
+    height: 36px;
+    width: auto;
+}
+
+/* Barra de 24 horas */
+.hour-bar{
+    table-layout: fixed;
+}
+
+.hour-bar th{
+    height: 22px;
+    padding: 0;
+}
+
+/* Puntito de color en la lista */
+.dot{
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+}
